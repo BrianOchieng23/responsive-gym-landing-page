@@ -42,20 +42,20 @@ window.addEventListener('scroll', scrollHeader)
 const sections = document.querySelectorAll('section[id]')
 
 const scrollActive = () => {
-      const scrollY = window.pageYOffset
+    const scrollY = window.pageYOffset
 
-      sections.forEach(current => {
+    sections.forEach(current => {
         const sectionHeight = current.offsetHeight,
-              sectionTop = current.offsetTop - 58,
-              sectionId = current.getAttribute('id'),
-              sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+            sectionTop = current.offsetTop - 58,
+            sectionId = current.getAttribute('id'),
+            sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
 
-              if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                sectionsClass.classList.add('active-link')
-              } else {
-                sectionsClass.classList.remove('active-link')
-              }
-      })
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            sectionsClass.classList.add('active-link')
+        } else {
+            sectionsClass.classList.remove('active-link')
+        }
+    })
 }
 window.addEventListener('scroll', scrollActive)
 
@@ -64,7 +64,7 @@ const scrollUp = () => {
     const scrollUp = document.getElementById('scroll-up')
     // when the scroll is higher than 350 viewport innerHeight, add the show-scroll class to the a tag with the scrollup
     this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
-    : scrollUp.classList.remove('show-scroll')
+        : scrollUp.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollUp)
 
@@ -77,10 +77,10 @@ const sr = ScrollReveal({
 })
 
 sr.reveal(`.home__data, .footer__container, .footer__group`)
-sr.reveal(`.home__img`, {delay: 700, origin: 'bottom'})
-sr.reveal(`.logos__img, .program__card, .pricing__card`, {interval: 100})
-sr.reveal(`.choose__img, .calculate__content`, {origin: 'left'})
-sr.reveal(`.choose__content, .calculate__img`, {origin: 'right'})
+sr.reveal(`.home__img`, { delay: 700, origin: 'bottom' })
+sr.reveal(`.logos__img, .program__card, .pricing__card`, { interval: 100 })
+sr.reveal(`.choose__img, .calculate__content`, { origin: 'left' })
+sr.reveal(`.choose__content, .calculate__img`, { origin: 'right' })
 
 /*=============== CALCULATE JS ===============*/
 const calculateForm = document.getElementById('calculate-form'),
@@ -92,46 +92,46 @@ const calculateBmi = (e) => {
     e.preventDefault()
 
     // Check if the fields have a value
-if(calculateCm.value === '' || calculateKg.value === '') {
-    // Add and remove color
-    calculateMessage.classList.remove('color-green')
-    calculateMessage.classList.add('color-red')
+    if (calculateCm.value === '' || calculateKg.value === '') {
+        // Add and remove color
+        calculateMessage.classList.remove('color-green')
+        calculateMessage.classList.add('color-red')
 
-    // Show message
-    calculateMessage.textContent = 'Fill in the Height and Weight '
+        // Show message
+        calculateMessage.textContent = 'Fill in the Height and Weight '
 
-    // Remove message three seconds
-    setTimeout(() => {
-        calculateMessage.textContent = ''
-    }, 3000)
-} else {
-    // BMI Formula
-    const cm = calculateCm.value / 100,
-          kg = calculateKg.value,
-          bmi = Math.round(kg / (cm * cm))
+        // Remove message three seconds
+        setTimeout(() => {
+            calculateMessage.textContent = ''
+        }, 3000)
+    } else {
+        // BMI Formula
+        const cm = calculateCm.value / 100,
+            kg = calculateKg.value,
+            bmi = Math.round(kg / (cm * cm))
 
-          // Show your health status
-          if(bmi < 18.5) {
+        // Show your health status
+        if (bmi < 18.5) {
             // Add color and display message
             calculateMessage.classList.add('color-green')
             calculateMessage.textContent = `Your BMI is ${bmi} and you are skinny 😔`
-          } else if (bmi < 25) {
+        } else if (bmi < 25) {
             calculateMessage.classList.add('color-green')
             calculateMessage.textContent = `Your BMI is ${bmi} and you are healthy 🥳`
-          } else {
+        } else {
             calculateMessage.classList.add('color-green')
             calculateMessage.textContent = `Your BMI is ${bmi} and you are overweight 😔`
-          }
+        }
 
-          // To clear the input field
-          calculateCm.value = ''
-          calculateKg.value = ''
+        // To clear the input field
+        calculateCm.value = ''
+        calculateKg.value = ''
 
-          // Remove message four seconds
-          setTimeout(() => {
+        // Remove message four seconds
+        setTimeout(() => {
             calculateMessage.textContent = ''
-          }, 4000)
-}
+        }, 4000)
+    }
 }
 
 calculateForm.addEventListener('submit', calculateBmi)
