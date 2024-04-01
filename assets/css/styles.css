@@ -7,7 +7,6 @@
 
    /*========== Colors ==========*/
    /*Color mode HSL(hue, saturation, lightness)*/
-   /* --first-color: hsl(79, 72%, 55%); */
    --first-color: hsl(200, 100%, 80%);
 
    --first-color-light: hsl(79, 97%, 77%);
@@ -346,6 +345,7 @@
 
  .button:hover {
    background-color: var(--first-color-alt);
+   border-radius: 12px;
  }
 
  .button i {
@@ -694,8 +694,8 @@
  }
 
  .calculate__message {
-   position: absolute;
-   transform: translateY(1rem);
+   position: relative;
+   transform: translateY(0.5rem);
  }
 
 
@@ -839,6 +839,8 @@
 
  .scrollup:hover {
    transform: translateY(-.25rem);
+   background-color: var(--first-color-alt);
+   border-radius: 17px;
  }
 
  /* Show Scroll Up*/
