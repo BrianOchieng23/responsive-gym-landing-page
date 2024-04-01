@@ -213,5 +213,7 @@ https://www.instagram.com/
 
 // To clear the input field
 
+6
+
 
 
