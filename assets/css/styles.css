@@ -8,7 +8,7 @@
    /*========== Colors ==========*/
    /*Color mode HSL(hue, saturation, lightness)*/
    --first-color: hsl(200, 100%, 80%);
-
+   --first-color-bv: hsl(271, 100%, 50%);
    --first-color-light: hsl(79, 97%, 77%);
    --first-color-alt: hsl(79, 67%, 52%);
    --first-color-dark: hsl(79, 63%, 50%);
@@ -125,6 +125,10 @@
    letter-spacing: 1.5px;
  }
 
+ .section__title:hover {
+   color: var(--first-color);
+ }
+
  .section__subtitle {
    font-size: var(--h2-font-size);
    font-family: var(--second-font);
@@ -132,6 +136,10 @@
    letter-spacing: 1.5px;
    color: var(--first-color);
    transform: rotate(-2deg);
+ }
+
+ .section__subtitle:hover {
+   color: var(--first-color-bv);
  }
 
  .section__titles {
@@ -143,6 +151,10 @@
  .section__title-border {
    -webkit-text-stroke: 1px var(--text-color);
    color: transparent;
+ }
+
+ .section__title-border:hover {
+   color: var(--first-color-alt);
  }
 
  .grid {
@@ -296,6 +308,15 @@
    letter-spacing: 1.5px;
  }
 
+ .home__subtitle:hover {
+   color: var(--first-color-bv);
+   font-style: italic;
+ }
+
+ .home__title:hover {
+   color: var(--first-color);
+ }
+
  .home__description {
    margin-bottom: 2.5rem;
  }
@@ -345,6 +366,8 @@
 
  .button:hover {
    background-color: var(--first-color-alt);
+   outline: 2px solid var(--first-color-bv);
+   outline-offset: 2px;
    border-radius: 12px;
  }
 
@@ -441,7 +464,10 @@
 
  .program__card:hover {
    background-color: var(--first-color);
-   border: 2px solid var(--first-color-light);
+   border: 3px solid var(--first-color-light);
+   outline: 2px solid var(--first-color-bv);
+   outline-offset: 3px;
+   border-radius: 20px;
  }
 
  .program__card:hover .program__shape {
@@ -516,6 +542,10 @@
  .choose__triangle-2 {
    width: 205px;
    background-color: var(--first-color-alt);
+ }
+
+ .choose__triangle-2:hover {
+   background-color: var(--first-color-bv);
  }
 
  .choose__triangle-3 {
@@ -604,6 +634,7 @@
  .pricing__card-active {
    background-color: var(--first-color);
    border: 2px solid var(--first-color-light);
+   border-radius: 15px;
  }
 
  .pricing__card-active .pricing__shape {
@@ -739,6 +770,7 @@
  .footer__input {
    padding: 20px 56px 20px 24px;
    border: 2px solid var(--first-color-light);
+   border-radius: 12px;
    background: transparent;
    color: var(--text-color);
    outline: none;
@@ -758,6 +790,10 @@
  .footer__title {
    font-size: var(--h3-font-size);
    margin-bottom: 1.5rem;
+ }
+
+ .footer__title:hover {
+   color: var(--first-color-bv);
  }
 
  .footer__links {
@@ -800,6 +836,10 @@
  .footer__copy {
    font-size: var(--smaller-font-size);
    color: var(--text-color-light);
+ }
+
+ .footer__copy:hover {
+   font-style: italic;
  }
 
  .footer__message {
