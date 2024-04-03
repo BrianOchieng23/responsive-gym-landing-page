@@ -433,6 +433,10 @@
    margin-bottom: 1rem;
  }
 
+ .coaching {
+   color: var(--first-color-bv);
+ }
+
  .program__description {
    font-size: var(--small-font-size);
    letter-spacing: .5px;
@@ -524,6 +528,8 @@
 
  .choose__subtitle {
    font-size: var(--small-font-size);
+   font-style: italic;
+   color: var(--first-color);
  }
 
  .choose__triangle {
@@ -961,7 +967,7 @@
    }
 
    .choose__data {
-     justify-items: flex-start;
+     justify-items: flex-end;
    }
 
    .choose__content .section__titles,
@@ -1154,7 +1160,7 @@
    }
 
    .program__container {
-     grid-template-columns: repeat(4, 245px);
+     grid-template-columns: repeat(3, 245px);
      padding: 3rem 0;
    }
 
